@@ -15,7 +15,7 @@ int main()
   int n = 0, res = 0;
 #if TEST == 0
   res = scanf("%d", &n);
-  printf("%d", solve(n);
+  printf("%d", solve(n));
 #else
   test();
 #endif
