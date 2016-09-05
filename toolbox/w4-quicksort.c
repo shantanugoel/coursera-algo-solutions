@@ -52,15 +52,16 @@ void swap(int *x, int *y)
 
 int partition(int ar[], int l, int r)
 {
-  int i = l, j = l, x = ar[l];
+  int i = l + 1, j = l, x = ar[l];
   for(; i <= r; ++i)
   {
-    if(ar[i] < x)
+    if(ar[i] <= x)
     {
+      j++;
       swap(&ar[i], &ar[j]);
-      j = i;
     }
   }
+  swap(&ar[l], &ar[j]);
   return j;
 }
 
@@ -72,7 +73,7 @@ void quicksort(int ar[], int l, int r)
     return;
   }
   m = partition(ar, l, r);
-  quicksort(ar, l, m);
+  quicksort(ar, l, m - 1);
   quicksort(ar, m + 1, r);
 }
 
