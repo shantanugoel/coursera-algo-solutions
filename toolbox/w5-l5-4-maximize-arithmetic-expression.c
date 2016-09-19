@@ -49,8 +49,6 @@ int do_op(char op, int a, int b)
     case '*':
       result = a * b;
       break;
-    default:
-      printf("errrrorrrrr==%c==\n", op);
   }
   return result;
 }
